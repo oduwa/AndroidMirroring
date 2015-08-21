@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="peU-fd-xH5">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem image="expand.png" id="fVZ-6C-nZI">
+                                        <connections>
+                                            <action selector="expandBarButtonPressed:" destination="BYZ-38-t0r" id="I0F-89-zh0"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem image="screen_res.png" id="TaE-Gj-t3g"/>
+                                    <barButtonItem image="collapse.png" id="6g5-Sj-igj">
+                                        <connections>
+                                            <action selector="collapseBarButtonPressed:" destination="BYZ-38-t0r" id="rM9-bU-cOu"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L44-nX-V6U">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="peU-fd-xH5" secondAttribute="trailing" id="3nb-M8-zHa"/>
+                            <constraint firstItem="L44-nX-V6U" firstAttribute="leading" secondItem="peU-fd-xH5" secondAttribute="leading" id="8cJ-Nv-F2V"/>
+                            <constraint firstItem="peU-fd-xH5" firstAttribute="trailing" secondItem="L44-nX-V6U" secondAttribute="trailing" id="9e7-td-KbZ"/>
+                            <constraint firstItem="L44-nX-V6U" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="QVs-Yr-YMc"/>
+                            <constraint firstItem="peU-fd-xH5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="RJ8-Ak-xQk"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="peU-fd-xH5" secondAttribute="bottom" id="cPM-NZ-f2f"/>
+                            <constraint firstItem="peU-fd-xH5" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="hea-4i-gSi"/>
+                            <constraint firstItem="peU-fd-xH5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="nAE-pW-kxR"/>
+                            <constraint firstAttribute="trailing" secondItem="L44-nX-V6U" secondAttribute="trailing" id="qYM-My-372"/>
+                            <constraint firstItem="L44-nX-V6U" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="qcI-9v-9UB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collapseBarButton" destination="6g5-Sj-igj" id="6iu-RG-h4w"/>
+                        <outlet property="expandBarButton" destination="fVZ-6C-nZI" id="NO0-ge-hd6"/>
+                        <outlet property="imageView" destination="L44-nX-V6U" id="uYc-un-sLQ"/>
+                        <outlet property="toolbar" destination="peU-fd-xH5" id="ZTe-Z7-mLa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="294" y="413"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="collapse.png" width="50" height="50"/>
+        <image name="expand.png" width="50" height="50"/>
+        <image name="screen_res.png" width="50" height="50"/>
+    </resources>
+</document>
