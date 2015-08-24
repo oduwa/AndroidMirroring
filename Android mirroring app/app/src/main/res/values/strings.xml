@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MediaProjectionTest1</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_activity_server">ServerActivity</string>
+    <string name="title_activity_viewer">ViewerActivity</string>
+</resources>

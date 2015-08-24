@@ -1,0 +1,68 @@
+apply plugin: 'com.android.model.application'
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+model{
+
+    android {
+        compileSdkVersion = 22
+        buildToolsVersion = "22.0.1"
+
+        defaultConfig.with {
+            applicationId = "com.vnc.oeo.mediaprojectiontest1"
+            minSdkVersion.apiLevel = 16
+            targetSdkVersion.apiLevel = 22
+            versionCode = 1
+            versionName = "1.0"
+        }
+    }
+
+    android.ndk {
+        moduleName = "JNIDummy"
+        ldLibs += "log"
+        stl = "stlport_static"
+    }
+
+    android.buildTypes {
+        release {
+            isMinifyEnabled = false
+            proguardFiles += file('proguard-rules.pro')
+        }
+    }
+
+    android.productFlavors {
+        create("flavor1") {
+            applicationId = 'com.app'
+        }
+    }
+
+    // Configures source set directory.
+    android.sources {
+        main {
+            java {
+                source {
+                    srcDir 'src'
+                }
+            }
+        }
+    }
+
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile files('libs/vncsdk.jar')
+    //compile fileTree(dir: "nativeLibs", include: 'nativeLibs.jar')
+}
+
+//task nativeLibsToJar() {
+//    destinationDir file("nativeLibs")
+//    baseName 'nativeLibs'
+//    from fileTree(dir: 'jniLibs', include: '**/*.so')
+//    into 'lib/'
+//}
+//
+//tasks.withType(Compile) {
+//    logger.error('CUSTOM COMPILE TASK CALLED');
+//    JavaCompile -> JavaCompile.dependsOn(nativeLibsToJar)
+//}
