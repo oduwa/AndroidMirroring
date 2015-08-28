@@ -36,6 +36,7 @@
 		B66DB2E31B862F67008A60B8 /* CommonFuncs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B66DB2E01B862F67008A60B8 /* CommonFuncs.cpp */; };
 		B66DB2E61B862FB7008A60B8 /* TCPClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B66DB2E41B862FB7008A60B8 /* TCPClient.cpp */; };
 		B66DB2E81B86334D008A60B8 /* x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B66DB2E71B86334D008A60B8 /* x.jpg */; };
+		B6A9DABA1B8CAF700015067E /* IPInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A9DAB91B8CAF700015067E /* IPInputViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +99,8 @@
 		B66DB2E41B862FB7008A60B8 /* TCPClient.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TCPClient.cpp; sourceTree = "<group>"; };
 		B66DB2E51B862FB7008A60B8 /* TCPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCPClient.h; sourceTree = "<group>"; };
 		B66DB2E71B86334D008A60B8 /* x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = x.jpg; sourceTree = "<group>"; };
+		B6A9DAB81B8CAF700015067E /* IPInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPInputViewController.h; sourceTree = "<group>"; };
+		B6A9DAB91B8CAF700015067E /* IPInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPInputViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +201,8 @@
 				B60C55F51B87686F00465EAC /* zlib */,
 				B66DB2E71B86334D008A60B8 /* x.jpg */,
 				B66DB2B81B862EDE008A60B8 /* Supporting Files */,
+				B6A9DAB81B8CAF700015067E /* IPInputViewController.h */,
+				B6A9DAB91B8CAF700015067E /* IPInputViewController.m */,
 			);
 			path = iOSSampleViewer;
 			sourceTree = "<group>";
@@ -341,6 +346,7 @@
 				B66DB2E21B862F67008A60B8 /* AndroidViewer.cpp in Sources */,
 				B60C56191B87686F00465EAC /* inffast.c in Sources */,
 				B60C56121B87686F00465EAC /* crc32.c in Sources */,
+				B6A9DABA1B8CAF700015067E /* IPInputViewController.m in Sources */,
 				B66DB2BE1B862EDE008A60B8 /* AppDelegate.m in Sources */,
 				B60C561E1B87686F00465EAC /* zutil.c in Sources */,
 				B60C56141B87686F00465EAC /* gzclose.c in Sources */,

@@ -24,14 +24,16 @@ class Callback : public AndroidViewer::AndroidViewerCallbackInterface {
 public:
     void newFrameAvailable(signed char* data, int size){
         // zlib decompress
-        uLong initialSize = size;
-        uLong resultingSize = 1664*2392*4;
-        char *decompressedData = new char[resultingSize];
-        uncompress((Bytef*)decompressedData, &resultingSize, (Bytef*)data, initialSize);
+//        uLong initialSize = size;
+//        uLong resultingSize = 1664*2392*4;
+//        char *decompressedData = new char[resultingSize];
+//        uncompress((Bytef*)decompressedData, &resultingSize, (Bytef*)data, initialSize);
+//        
+//        printf("CALLBACK: DECOMPRESSED FROM %d TO %lu \n", size, resultingSize);
+        printf("CALLBACK: %d \n", size);
         
-        printf("CALLBACK: DECOMPRESSED FROM %lu TO %lu \n", size, resultingSize);
-        
-        UIImage *i = [[UIImage alloc] initWithData:[NSData dataWithBytes:decompressedData length:resultingSize]];
+        //UIImage *i = [[UIImage alloc] initWithData:[NSData dataWithBytes:decompressedData length:resultingSize]];
+        UIImage *i = [[UIImage alloc] initWithData:[NSData dataWithBytes:data length:size]];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             vc.imageView.image = i;
@@ -60,13 +62,22 @@ Callback cb;
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapScreen)];
     [self.view addGestureRecognizer:tap];
     [self.view bringSubviewToFront:_toolbar];
+}
 
+- (void) viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
     [self startViewer];
 }
 
 - (void) startViewer
 {
-    AndroidViewer *viewer = new AndroidViewer("10.10.21.130", 6881, &cb);
+    const char *c1 = [_ip UTF8String];
+    char *c2 = new char[32];
+    sprintf(c2, "%s", c1);
+    
+    AndroidViewer *viewer = new AndroidViewer(c2, 6880, &cb);
     viewer->connect();
     
     dispatch_queue_t viewingQueue = dispatch_queue_create("Viewing Queue",NULL);
